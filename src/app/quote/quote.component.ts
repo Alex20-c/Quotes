@@ -8,7 +8,7 @@ import { Quote } from '../quote';
   styleUrls: ['./quote.component.scss']
 })
 export class QuoteComponent implements OnInit {
-  quite: Quote[] = [
+  quotes: Quote[] = [
     new Quote(
       1,
       'If we acknowledge our need for God, he will help user',
@@ -36,7 +36,33 @@ export class QuoteComponent implements OnInit {
       0,
       0),
   ];
+  
+  upvote(index) {
+    this.quotes[index].upvotes++;
+  }
+  downvote(index) {
+    this.quotes[index].downvotes++;
+  }
+  highestUpvote(){
+    this.upvote
+  }
+  //this.prenum=0
+  //this.lastNum=0
+  
+  // for(this.counter=0; this.quotes.length; this.counter++){
+  //     this.lastNum = this.quotes[this.counter].upvotes;
+  //     if(this.lastNum > this.preNum){
+  //       this.preNum = lastNum}
+  //   }
+  //   return this.preNum;
+  // }
 
+  completeQuote(isComplete, index){
+    if (isComplete) {
+      this.quotes.splice(index, 1);
+    }
+  }
+  
   
   constructor() { }
 

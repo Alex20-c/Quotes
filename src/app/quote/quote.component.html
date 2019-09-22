@@ -1,38 +1,39 @@
+<!-- <p>quote works!</p> -->
 <div class="container">
-    <!--<h2>List of Quotes<h2>-->
-    <hr>
-
-    <ul>
-        <div class="row">
-            <div class="col-md-6">
-                <div *ngFor='let quote of quotes;let i = index'>
-
-                    <li>
-                        ---{{quote.name}}--- Author: {{quote.author}}, Posted by{{quote.user}}
-                        on{{quote.completeDate|date}}
-                        <br>
-                        <button (click)="upvote(i)" class="btn btn-primary btn-xs">
-                            <i class="up"></i>{{ quote.upvote }}<img
-                                src="https://techjoomla.com/media/zoo/images/jlike_0110c7a06bb71e822e51e2856e577fda.png"
-                                height="30" width="30">
-                        </button> &nbsp;&nbsp;
-                        <button (click)="downvote(i)" class="btn btn-primary btn-xs">
-                            <i class="down"></i>{{ quote.downvote }}<img
-                                src="https://previews.123rf.com/images/alexwhite/alexwhite1503/alexwhite150305013/38144639-dislike-green-flat-icon-thumb-down-sign.jpg"
-                                height="30" width="30">
-                        </button> &nbsp;&nbsp;
-                    </li>
-                    <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event.i)'></app-quote-detail>
-                    <app-quote-detail *ngIf="quote.showDescription" [quote]='quote' (isComplete)='deleteQuote($event,i'>
-                    </app-quote-detail>
-
+        <!-- <h2>List of Quotes</h2> -->
+        <hr>
+    
+        <ul>
+            <div class="row">
+                <div class="col-md-6">
+                    <div *ngFor='let quote of quotes;let i = index'>
+    
+                        <li>
+                            ---{{quote.name}}--- Author: {{quote.author}}, Posted by {{quote.user}} on
+                            {{quote.completeDate|date}}
+                            <br>
+                            <button (click)="upvote(i)" class="btn btn-primary btn-xs">
+                                <i class="up"></i>{{ quote.upvotes }}<img
+                                    src="https://techjoomla.com/media/zoo/images/jlike_0110c7a06bb71e822e51e2856e577fda.png"
+                                    height="30" width="30">
+                            </button> &nbsp;&nbsp;
+                            <button (click)="downvote(i)" class="btn btn-primary btn-xs">
+                                <i class="down"></i>{{ quote.downvotes }} <img
+                                    src="https://previews.123rf.com/images/alexwhite/alexwhite1503/alexwhite150305013/38144639-dislike-green-flat-icon-thumb-down-sign.jpg"
+                                    height="30" width="30">
+                            </button> &nbsp;&nbsp;
+                        </li>
+    
+                        <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
+                        <app-quote-detail *ngIf="quote.showDescription" [quote]='quote'
+                            (isComplete)='deleteQuote($event,i)'></app-quote-detail>
+    
+                    </div>
+                </div>
+    
+                <div class="col-md-6">
+                    <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
                 </div>
             </div>
-
-            <div class="col-md-6">
-                <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
-            </div>
-        </div>
-    </ul>
-
-</div>
+        </ul>
+    </div>

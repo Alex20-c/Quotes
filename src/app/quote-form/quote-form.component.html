@@ -1,1 +1,14 @@
-<p>quote-form works!</p>
+<!-- <p>quote-form works!</p> -->
+<div class="container-fluid" id="newq">
+    <h2 class="text-center">Write a new Quote</h2>
+    <hr>
+    <form (ngSubmit)='submitQuote()' #quoteForm='ngForm'>
+        <div class="form-group">
+            <div class=" ">
+                <label for="user">Name of the writer</label>
+                <input type="text" class="form-control" id="user" [(ngModel)]="newQuote.user" name="useer" #name="ngModel" required>
+            </div>
+            <br>
+        </div>
+    </form>
+</div>

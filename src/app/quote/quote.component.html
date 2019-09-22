@@ -1,1 +1,20 @@
-<p>quote works!</p>
+<div class="container">
+    <!--<h2>List of Quotes<h2>-->
+    <hr>
+    
+    <ul>
+        <div class="row">
+            <div class="col-md-6">
+                <div *ngFor='let quote of quotes;let i = index'>
+
+                    <li>
+                        ---{{quote.name}}--- Author: {{quote.author}}, Posted by{{quote.user}} on{{quote.completeDate|date}}
+                        <br>
+                        
+                    </li>
+                </div>
+            </div>
+        </div>
+    </ul>
+
+</div>

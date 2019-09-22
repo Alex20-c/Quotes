@@ -17,7 +17,7 @@ export class QuoteComponent implements OnInit {
       new Date(2018, 5, 16),
       0,
       0),
-      
+
     new Quote(
       2,
       'Some are born great,some achieve greatness,and some have greatness thrust upon them',
@@ -36,19 +36,19 @@ export class QuoteComponent implements OnInit {
       0,
       0),
   ];
-  
+
   upvote(index) {
     this.quotes[index].upvotes++;
   }
   downvote(index) {
     this.quotes[index].downvotes++;
   }
-  highestUpvote(){
+  highestUpvote() {
     this.upvote
   }
   //this.prenum=0
   //this.lastNum=0
-  
+
   // for(this.counter=0; this.quotes.length; this.counter++){
   //     this.lastNum = this.quotes[this.counter].upvotes;
   //     if(this.lastNum > this.preNum){
@@ -57,13 +57,26 @@ export class QuoteComponent implements OnInit {
   //   return this.preNum;
   // }
 
-  completeQuote(isComplete, index){
+  completeQuote(isComplete, index) {
     if (isComplete) {
       this.quotes.splice(index, 1);
     }
   }
-  
-  
+  deleteQuote(isComplete, index) {
+    if (isComplete) {
+      let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}?`)
+
+      if (toDelete) {
+        this.quotes.splice(index, 1)
+      }
+    }
+  }
+  addNewQuote(quote) {
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength + 1;
+    quote.completeDate = new Date(quote.completeDate)
+    this.quotes.push(quote)
+  }
   constructor() { }
 
   ngOnInit() {

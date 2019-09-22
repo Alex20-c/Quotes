@@ -10,8 +10,16 @@
                     <li>
                         ---{{quote.name}}--- Author: {{quote.author}}, Posted by{{quote.user}} on{{quote.completeDate|date}}
                         <br>
-                        
+                        <button (click)="upvote(i)" class="btn btn-primary btn-xs">
+                            <i class="up"></i>{{ quote.upvote }}<img src="https://techjoomla.com/media/zoo/images/jlike_0110c7a06bb71e822e51e2856e577fda.png"
+                            height="30" width="30">
+                        </button> &nbsp;&nbsp;
+                        <button (click)="downvote(i)" class="btn btn-primary btn-xs">
+                            <i class="down"></i>{{ quote.downvote }}<img src="https://previews.123rf.com/images/alexwhite/alexwhite1503/alexwhite150305013/38144639-dislike-green-flat-icon-thumb-down-sign.jpg"
+                            height="30" width="30">
+                        </button> &nbsp;&nbsp;
                     </li>
+                    
                 </div>
             </div>
         </div>

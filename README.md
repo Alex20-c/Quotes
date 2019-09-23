@@ -9,9 +9,9 @@ Quotes is a platform designed to insert quotes and add any other quotes of known
 
 ## Setup/Installation Requirements
 
-*Open your laptop
-*Connect to internet
-*Search for [my github link](https://alex20-c.github.io/Quotes/) 
+* Open your laptop
+* Connect to internet
+* Search for [my github link](https://alex20-c.github.io/Quotes/) 
 
 ## Platform Specifications
 

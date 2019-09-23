@@ -11,10 +11,10 @@ export class QuoteComponent implements OnInit {
   quotes: Quote[] = [
     new Quote(
       1,
-      'If we acknowledge our need for God, he will help user',
+      'If we acknowledge our need for God, he will help us',
       'Ben Carson',
       'Think big',
-      new Date(2018, 5, 16),
+      new Date(2019, 5, 16),
       0,
       0),
 
@@ -22,8 +22,8 @@ export class QuoteComponent implements OnInit {
       2,
       'Some are born great,some achieve greatness,and some have greatness thrust upon them',
       'Twelfth Night',
-      'Shakespear',
-      new Date(1999, 1, 20),
+      'Shakespear',     
+      new Date(2018, 1, 20),
       0,
       0),
 
@@ -31,8 +31,8 @@ export class QuoteComponent implements OnInit {
       3,
       'Time wasted never come back',
       'Albert',
-      'Thomson',
-      new Date(1998, 2, 16),
+      'Thomson',     
+      new Date(2019, 2, 16),
       0,
       0),
   ];
